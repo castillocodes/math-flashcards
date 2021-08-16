@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h1>Hello Sergio! You've got this.</h1>
+<h2>What skill do you want to practice?</h2>
+<div>
+    <a href="{% url 'add' %}">
+        <img src="static/images/title_add.png" width="25%" height="25%"> 
+    </a>
+    <a href="{% url 'subtract' %}">
+        <img src="static/images/title_sub.png " width="25%" height="25%"><br>
+    </a>
+    <a href="{% url 'multiply' %}">
+        <img src="static/images/title_mul.png " width="25%" height="25%">
+    </a>
+    <a href="{% url 'divide' %}">
+        <img src="static/images/title_div.png " width="25%" height="25%">
+    </a>   
+</div>
 {% endblock %}
