@@ -4,9 +4,9 @@
 <center>
     {% if my_ans %}
     <div class="alert alert-{{ color }} alert-dismissible fade show" role="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         {{ my_ans }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
+    </div>
       {% endif %}
 <br>
     <h1 style="font-size:100px"><img src="static/images/{{ num_1 }}.gif" width="35%" height="35%"> <strong>x</strong> <img src="static/images/{{ num_2 }}.gif " width="35%" height="35%"></h1><br>
@@ -19,5 +19,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <script>
+            document.title = 'M+ Multiplication Flashcards'
+        </script>
 </center>
 {% endblock %}

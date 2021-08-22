@@ -4218,7 +4218,8 @@
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    border-radius: 0.25rem; }
+    border-radius: 0.25rem;
+   }
   
   .alert-heading {
     color: inherit; }
@@ -8284,6 +8285,8 @@
       #sidebar {
         min-width: 80px;
         max-width: 80px;
+        height: 760px;
+
         text-align: center;
         margin-left: -80px !important; }
         #sidebar.active {

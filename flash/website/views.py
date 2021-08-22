@@ -15,6 +15,18 @@ def add(request):
         old_num_1 = request.POST['old_num_1']
         old_num_2 = request.POST['old_num_2']
 
+        if not answer:
+            my_ans = "Please enter an answer below."
+            color = "warning"
+
+            return render(request, 'add.html', {
+            'answer':answer,
+            'num_1': num_1,
+            'num_2': num_2,
+            'color': color,
+            'my_ans': my_ans,
+            })      
+
         correct_ans = int(old_num_1) + int(old_num_2)
         if int(answer) == correct_ans:
             my_ans = answer + " is correct! " + old_num_1 + " + " + old_num_2 + " = " + answer
