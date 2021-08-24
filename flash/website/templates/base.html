@@ -30,9 +30,9 @@
 			<nav id="sidebar" class="active" style="height: 800px;">
 				<h1><a href="{% url 'index' %}" class="logo">M+</a></h1>
         <ul class="list-unstyled components mb-5">
-
           <li>
-              <a href="#"><h3 style="color:yellow; margin-bottom: -5px;"><strong>{{request.session.points}}</strong></h3>Points</a>
+            <h3 style="color:yellow; margin-bottom: -5px; padding-top: 0px; padding-bottom: 0px; border-bottom-width: 0px;"><strong>{{request.session.points}}</strong></h3>Points
+            <a href='/reset_points'><button type="button" class="btn btn-outline-light">Reset</button></a>
           </li>
           <li>
               <a href="{% url 'add' %}"><img src="static/images/add_symbol.png" width="30px" height="30px"><br> Add</a>

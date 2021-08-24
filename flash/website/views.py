@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, sys
 
 # Create your views here.
 def index(request):
     if 'points' not in request.session:
         request.session['points'] = 0
     return render(request, 'index.html', {})
+
+def reset(request):
+    request.session.clear()
+    return redirect('/')
 
 def add(request):
     from random import randint
@@ -38,12 +42,13 @@ def add(request):
             color = "success"
             myPoints += pointsThisTurn
             request.session['points'] = myPoints
+            sys.exit()
         else:
             my_ans = answer + " is incorrect! " + old_num_1 + " + " + old_num_2 + " = " + str(correct_ans) + ". You lost " + str(pointsThisTurn) + " points."
             color = "danger"
             myPoints -= pointsThisTurn
             request.session['points'] = myPoints
-
+        
         return render(request, 'add.html', {
             'answer':answer,
             'my_ans':my_ans,
