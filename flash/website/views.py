@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, sys
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
@@ -31,10 +31,9 @@ def add(request):
             'answer':answer,
             'num_1': num_1,
             'num_2': num_2,
-            'pointsThisTurn': pointsThisTurn,
             'color': color,
             'my_ans': my_ans,
-            })      
+            })   
 
         correct_ans = int(old_num_1) + int(old_num_2)
         if int(answer) == correct_ans:
@@ -42,7 +41,6 @@ def add(request):
             color = "success"
             myPoints += pointsThisTurn
             request.session['points'] = myPoints
-            sys.exit()
         else:
             my_ans = answer + " is incorrect! " + old_num_1 + " + " + old_num_2 + " = " + str(correct_ans) + ". You lost " + str(pointsThisTurn) + " points."
             color = "danger"
@@ -60,8 +58,7 @@ def add(request):
 
     return render(request, 'add.html', {
         'num_1': num_1,
-        'num_2': num_2,
-        'pointsThisTurn': pointsThisTurn,
+        'num_2': num_2
     })
 
 def subtract(request):
@@ -83,7 +80,7 @@ def subtract(request):
             my_ans = "Please enter an answer below."
             color = "warning"
 
-            return render(request, 'add.html', {
+            return render(request, 'subtract.html', {
             'answer':answer,
             'num_1': num_1,
             'num_2': num_2,
@@ -136,7 +133,7 @@ def multiply(request):
             my_ans = "Please enter an answer below."
             color = "warning"
 
-            return render(request, 'add.html', {
+            return render(request, 'multiply.html', {
             'answer':answer,
             'num_1': num_1,
             'num_2': num_2,
@@ -190,7 +187,7 @@ def divide(request):
             my_ans = "Please enter an answer below."
             color = "warning"
 
-            return render(request, 'add.html', {
+            return render(request, 'divide.html', {
             'answer':answer,
             'num_1': num_1,
             'num_2': num_2,
