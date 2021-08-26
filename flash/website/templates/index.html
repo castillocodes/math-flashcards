@@ -1,19 +1,56 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<h2>What skill do you want to practice?</h2>
-<div>
-    <a href="{% url 'add' %}">
-        <img src="static/images/title_add.png" width="25%" height="25%"> 
-    </a>
-    <a href="{% url 'subtract' %}">
-        <img src="static/images/title_sub.png " width="25%" height="25%"><br>
-    </a>
-    <a href="{% url 'multiply' %}">
-        <img src="static/images/title_mul.png " width="25%" height="25%">
-    </a>
-    <a href="{% url 'divide' %}">
-        <img src="static/images/title_div.png " width="25%" height="25%">
-    </a>   
-</div>
+<center><h2>M+ Flashcards</h2></center>
+<center><h6>M+ Flashcards is a place for students to sharpen their math skills through randomly generated flashcards. 
+        Earn or lose points depending on whether you get your question right or wrong, then watch your points score grow.
+        Choose a skill below to get started.
+        </h6></center><br>
+<div class="card-group">
+    <div class="card">
+        <img src="static/images/home_add.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Addition</h5>
+            <p class="card-text">Earn from 2 to 5 points for each question you answer correctly. 
+            Lose from 2 to 5 points for each question you answer incorrectly.
+            </p>
+        </div>
+        <div class="card-footer">
+        <center><a href="{% url 'add' %}"><button type="button" class="btn btn-outline-primary">Start</button></a></center>
+        </div>
+    </div>
+    <div class="card">
+        <img src="static/images/home_sub.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Subtraction</h5>
+            <p class="card-text">Earn from 5 to 10 points for each question you answer correctly. 
+            Lose from 5 to 10 points for each question you answer incorrectly.
+            </p>
+        </div>
+        <div class="card-footer">
+        <center><a href="{% url 'subtract' %}"><button type="button" class="btn btn-outline-primary">Start</button></a></center>      </div>
+    </div>
+    <div class="card">
+        <img src="static/images/home_mul.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Multiplication</h5>
+            <p class="card-text">Earn from 10 to 20 points for each question you answer correctly. 
+            Lose from 10 to 20 points for each question you answer incorrectly.
+            </p>      
+        </div>
+        <div class="card-footer">
+        <center><a href="{% url 'multiply' %}"><button type="button" class="btn btn-outline-primary">Start</button></a></center>      </div>
+    </div>
+    <div class="card">
+        <img src="static/images/home_div.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Division</h5>
+            <p class="card-text">Earn from 20 to 50 points for each question you answer correctly. 
+            Lose from 20 to 50 points for each question you answer incorrectly.
+            </p>        
+        </div>
+        <div class="card-footer">
+        <center><a href="{% url 'divide' %}"><button type="button" class="btn btn-outline-primary">Start</button></a></center>        </div>
+    </div>
+  </div>
 {% endblock %}

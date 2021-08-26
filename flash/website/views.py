@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from random import randint
 
 # Create your views here.
 def index(request):
@@ -11,8 +12,6 @@ def reset(request):
     return redirect('/')
 
 def add(request):
-    from random import randint
-
     num_1 = randint(0,10)
     num_2 = randint(0,10)
     pointsThisTurn = randint(2,5)
@@ -46,7 +45,7 @@ def add(request):
             color = "danger"
             myPoints -= pointsThisTurn
             request.session['points'] = myPoints
-        
+
         return render(request, 'add.html', {
             'answer':answer,
             'my_ans':my_ans,
@@ -62,8 +61,6 @@ def add(request):
     })
 
 def subtract(request):
-    from random import randint
-
     num_1 = randint(0,10)
     num_2 = randint(0,10)
     pointsThisTurn = randint(5,10)
@@ -117,8 +114,6 @@ def subtract(request):
     })
 
 def multiply(request):
-    from random import randint
-
     num_1 = randint(0,10)
     num_2 = randint(0,10)
     pointsThisTurn = randint(10,20)
@@ -170,9 +165,7 @@ def multiply(request):
     })
 
 def divide(request):
-    from random import randint
-
-    x = randint(0,3)
+    x = randint(0,4)
     num_2 = randint(1,6)
     num_1 = x * num_2
     pointsThisTurn = randint(20,50)
